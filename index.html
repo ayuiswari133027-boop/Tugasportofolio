@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Junior Network Engineer</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #080f1d;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+:root {
+    --blue: #00aaff;
+    --dark: #080f1d;
+    --card: #111d30;
+    --text: #a9b8cc;
+}
+
+.container {
+    width: 85%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVBAR */
+header {
+    padding: 20px 0;
+    background: rgba(8,15,29,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #1b2b40;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+/* HERO */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+}
+
+.tag {
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 7px 15px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero p {
+    color: var(--text);
+    font-size: 17px;
+    max-width: 570px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: #00101d;
+    padding: 13px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.network {
+    position: absolute;
+    right: -100px;
+    top: 50px;
+    width: 500px;
+    opacity: .17;
+}
+
+/* SECTION */
+section {
+    padding: 85px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: var(--blue);
+}
+
+.subtitle {
+    color: var(--text);
+    margin-bottom: 40px;
+}
+
+/* ABOUT */
+.about-card {
+    background: var(--card);
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid #20334d;
+}
+
+.about-card p {
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.info div {
+    background: #0b1728;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.info strong {
+    color: var(--blue);
+    display: block;
+}
+
+/* SKILLS */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card);
+    border: 1px solid #20334d;
+    padding: 25px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--blue);
+}
+
+.skill-card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* PROJECT */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid #20334d;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.project-card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* CONTACT */
+.contact-box {
+    background: linear-gradient(135deg, #102b49, #111d30);
+    border: 1px solid #24517b;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.contact-box p {
+    color: var(--text);
+    margin: 15px 0 25px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #20334d;
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* MOBILE */
+@media(max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .network {
+        width: 300px;
+        right: -150px;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+<div class="container">
+<nav>
+    <div class="logo">NET<span style="color:white">.PORTFOLIO</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container">
+
+<div class="hero-content">
+    <div class="tag">JUNIOR NETWORK ENGINEER</div>
+
+    <h1>Halo, Saya <span>[NAMA KAMU]</span></h1>
+
+    <p>
+        Saya merupakan pelajar jurusan Teknik Jaringan Komputer
+        dan Telekomunikasi yang memiliki minat dalam bidang
+        networking, teknologi informasi, dan infrastruktur jaringan.
+    </p>
+
+    <a href="#about" class="btn">Kenali Saya →</a>
+</div>
+
+<svg class="network" viewBox="0 0 500 500">
+    <g stroke="#00aaff" stroke-width="2" fill="none">
+        <path d="M250 250 L100 100 L400 100 L250 250 L400 400 L100 400 Z"/>
+        <path d="M100 100 L100 400 M400 100 L400 400"/>
+        <path d="M100 250 L400 250"/>
+    </g>
+    <g fill="#00aaff">
+        <circle cx="250" cy="250" r="15"/>
+        <circle cx="100" cy="100" r="10"/>
+        <circle cx="400" cy="100" r="10"/>
+        <circle cx="100" cy="400" r="10"/>
+        <circle cx="400" cy="400" r="10"/>
+    </g>
+</svg>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <p class="subtitle">Mengenal lebih dekat tentang diri saya.</p>
+
+    <div class="about-card">
+        <p>
+            Saya adalah seorang pelajar yang sedang mempelajari
+            Teknik Jaringan Komputer dan Telekomunikasi (TJKT).
+            Saya tertarik mempelajari bagaimana jaringan komputer
+            bekerja, konfigurasi perangkat jaringan, serta
+            pemeliharaan sistem jaringan.
+        </p>
+
+        <p>
+            Saya memiliki semangat untuk terus belajar,
+            mengembangkan keterampilan teknis, dan mendapatkan
+            pengalaman di dunia teknologi informasi.
+        </p>
+
+        <div class="info">
+            <div>
+                <strong>Nama</strong>
+                [Nama Lengkap]
+            </div>
+
+            <div>
+                <strong>Kelas</strong>
+                [Kelas]
+            </div>
+
+            <div>
+                <strong>Jurusan</strong>
+                Teknik Jaringan Komputer dan Telekomunikasi
+            </div>
+
+            <div>
+                <strong>Profesi</strong>
+                Junior Network Engineer
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <p class="subtitle">Kemampuan dan teknologi yang sedang saya pelajari.</p>
+
+    <div class="skills">
+
+        <div class="skill-card">
+            <h3>Networking</h3>
+            <p>Dasar jaringan komputer, LAN, WAN, dan topologi jaringan.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>IP Addressing</h3>
+            <p>Memahami IP address, subnetting, dan konfigurasi jaringan.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>MikroTik</h3>
+            <p>Pengenalan konfigurasi router dan manajemen jaringan.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>HTML & CSS</h3>
+            <p>Membuat dan mengembangkan website sederhana.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Troubleshooting</h3>
+            <p>Mengenali dan menganalisis permasalahan koneksi jaringan.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Hardware</h3>
+            <p>Mengenal perangkat komputer dan perangkat jaringan.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PROJECT -->
+<section id="project">
+<div class="container">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <p class="subtitle">Beberapa proyek dan latihan yang pernah saya kerjakan.</p>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>Network Configuration</h3>
+            <p>
+                Praktik konfigurasi jaringan komputer
+                dan pengenalan IP addressing.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Network Topology</h3>
+            <p>
+                Membuat rancangan topologi jaringan
+                menggunakan simulasi Cisco Packet Tracer.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Personal Website</h3>
+            <p>
+                Mengembangkan website portofolio pribadi
+                menggunakan HTML dan CSS.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+    <div class="contact-box">
+        <h2>Let's <span style="color:#00aaff">Connect!</span></h2>
+        <p>
+            Terima kasih telah mengunjungi website portofolio saya.
+            Mari terhubung dan berbagi pengetahuan tentang teknologi.
+        </p>
+
+        <a href="mailto:emailkamu@gmail.com" class="btn">
+            Hubungi Saya
+        </a>
+    </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 [NAMA KAMU] | Junior Network Engineer</p>
+    <p>Built with HTML & CSS</p>
+</footer>
+
+</body>
+  </html>
+  
